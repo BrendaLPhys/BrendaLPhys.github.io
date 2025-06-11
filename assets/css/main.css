@@ -2441,10 +2441,18 @@ input, select, textarea {
 		margin-top: calc(-1em + 1px);
 	}
 
+		/* Fix drop-down submenus from overlapping */
+
+		.dropotron.level-1 {
+			margin-left: -1px; /* aligns submenu with parent */
+			z-index: 1001;
+		}
+
 		.dropotron.level-0 {
 			font-size: 0.7em;
 			font-weight: 400;
 			margin-top: 1.5em;
+			z-index: 1000;
 		}
 
 			.dropotron.level-0:before {

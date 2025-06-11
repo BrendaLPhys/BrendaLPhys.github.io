@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Body Measurements | Brenda Leyva</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">Brenda Leyva's Portfolio</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="my-projects.html">Projects</a>
+							<ul>
+								<li>
+									<a href="#">Data Science and AI</a>
+									<ul>
+										<li><a href="rag.html">RAG System and NL2SQL Agent</a></li>
+										<li><a href="tracking.html">Player Tracking Solution</a></li>
+										<li><a href="highlights.html">Video Highlights Generator</a></li>
+										<li><a href="measurements.html">Automatic Body Measurements</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Technical Writing</a></li>
+							</ul>
+						</li>
+						<li><a href="resume.html">Resume</a></li>
+						<li><a href="contact.html" class="button primary">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Main -->
+			<article id="main">
+				<header class="special container">
+					<span class="icon solid fa-user-circle"></span>
+					<h2>Automatic Body Measurements</h2>
+                    <h3>POC for XR Experiences</h3>
+					<p>An approach to body measurements generation from 2D images.</p>
+				</header>
+
+				<!-- Content -->
+				<section class="wrapper style4 container">
+					<div class="content">
+						<section>
+                            <header>
+								<h3>Overview</h3>
+							</header>
+							<p>This project explored the state of the art in body measurements generation from 2D images, focusing on creating a proof of concept (POC) for XR experiences.
+							The main approach was based on the published paper <a href="https://arxiv.org/pdf/2205.14347" target="_blank">Estimation of 3D Body Shape and 
+                            Clothing Measurements from Frontal and Side-view Images</a> by Prabhu et al. 
+                            Additionally, the human body model used in this experiment is the one proposed by Yansel Gonzalez Tejeda 
+                            and Helmut A. Mayer named <a href="https://github.com/neoglez/calvis" target="_blank">CALVIS</a>.
+                            </p>
+
+							<a href="#" class="image featured"><img src="images/measures1.png" alt="Project Demo" /></a>
+							
+							<header>
+								<h3>Key Features</h3>
+							</header>
+							<ul>
+								<li>Input is only two images: frontal and side-view.</li>
+								<li>Based on open-source tools and libraries.</li>
+								<li>State-of-the-art approach.</li>
+								<li>Three base models: Autoencoder model for feature extraction, SMPL for 3D reconstruction, and CALVIS for measure estimation.</li>
+							</ul>
+
+							<header>
+								<h3>Tech Stack</h3>
+							</header>
+							<p>Python, OpenCV, PyTorch, Scikit-learn, Trimesh, NumPy, Pandas, Vedo.</p>
+
+							<header>
+								<h3>Impact</h3>
+							</header>
+							<p>This POC demonstrated the feasibility of generating body measurements from 2D images, which can be used in various applications such as 
+                                virtual fitting rooms, personalized clothing recommendations, and XR experiences.
+							</p>
+
+							<footer>
+								<ul class="buttons">
+									<li><a href="my-projects.html" class="button">Back to Projects</a></li>
+								</ul>
+							</footer>
+						</section>
+					</div>
+				</section>
+			</article>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://github.com/BrendaLPhys" class="icon brands circle fa-github" target="_blank"><span class="label">Github</span></a></li>
+					<li><a href="https://linkedin.com/in/brenda-leyva-a-861430309" class="icon brands circle fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+					<li><a href="https://brenda-leyva89.medium.com" class="icon brands circle fa-medium" target="_blank"><span class="label">Medium</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Brenda'sPortfolio</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
