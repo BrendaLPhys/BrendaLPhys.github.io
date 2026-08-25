@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brenda Leyva Amaya | AI Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,72,400;0,72,500;0,72,600;0,72,700;1,72,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --paper: #F2F0EB;
+    --card: #FFFFFF;
+    --ink: #1C2128;
+    --muted: #5B6472;
+    --faint: #8A9099;
+    --accent: #0E5C56;
+    --accent-light: #4FA79C;
+    --rule: #DEDAD0;
+    --sidebar-bg: #262A31;
+    --sidebar-text: #ECEDEE;
+    --sidebar-muted: #A7ACB5;
+    --sidebar-rule: #3C4048;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    max-width: 880px;
+    margin: 32px auto;
+    background: var(--card);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 12px 32px rgba(28,33,40,0.12);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 252px 1fr;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 32px 24px 28px;
+}
+
+.sidebar-block {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--sidebar-rule);
+}
+
+.sidebar-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.sidebar-block h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+    color: var(--accent-light);
+    margin: 0 0 14px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 12px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: var(--sidebar-text);
+    word-break: break-word;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item .icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--accent-light);
+}
+
+.contact-item .icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.contact-item a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+}
+
+.qual-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.qual-list li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--sidebar-text);
+}
+
+.qual-list li:last-child {
+    margin-bottom: 0;
+}
+
+.qual-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 5px;
+    height: 5px;
+    background: var(--accent-light);
+    border-radius: 50%;
+}
+
+.edu-entry, .lang-entry {
+    margin-bottom: 10px;
+}
+
+.edu-entry:last-child, .lang-entry:last-child {
+    margin-bottom: 0;
+}
+
+.edu-entry .degree, .lang-entry .lang-name {
+    display: block;
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--sidebar-text);
+    margin-bottom: 2px;
+}
+
+.edu-entry .school, .lang-entry .lang-level {
+    display: block;
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: var(--sidebar-muted);
+}
+
+/* ===== Main ===== */
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-band {
+    background: var(--accent);
+    padding: 16px 44px;
+}
+
+.header-band h1 {
+    margin: 0;
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+}
+
+.header-band .title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #D7EAE7;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.main-body {
+    padding: 10px 44px 16px;
+}
+
+.section {
+    margin-top: 12px;
+}
+
+.section:first-child {
+    margin-top: 0;
+}
+
+.section h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.summary {
+    line-height: 1.4;
+    color: var(--muted);
+    font-size: 11.5px;
+}
+
+/* Skills */
+.skills-block {
+    margin-bottom: 5px;
+}
+
+.skills-block:last-child {
+    margin-bottom: 0;
+}
+
+.skills-block .label {
+    font-family: 'Newsreader', serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+    display: block;
+}
+
+.skills-block .items {
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+/* Jobs */
+.job {
+    margin-bottom: 5px;
+}
+
+.job:last-child {
+    margin-bottom: 0;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+
+.job-header .role {
+    font-family: 'Newsreader', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.job-header .org {
+    font-family: 'Newsreader', serif;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.job-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: var(--faint);
+    font-size: 10.5px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.job ul {
+    margin: 5px 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.job li {
+    margin-bottom: 2px;
+    font-size: 11px;
+    line-height: 1.25;
+    color: var(--muted);
+    padding-left: 15px;
+    position: relative;
+}
+
+.job li:last-child {
+    margin-bottom: 0;
+}
+
+.job li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+}
+
+/* Compact list for leadership/research entries */
+.compact-list {
+    margin-top: 4px;
+}
+
+.compact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px 16px;
+    padding: 4px 0;
+    border-top: 1px solid var(--rule);
+}
+
+.compact-row:first-child {
+    border-top: none;
+}
+
+.compact-row .role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.compact-row .org {
+    font-size: 11.5px;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.compact-row .job-date {
+    font-size: 10px;
+}
+
+/* Print */
+@page {
+    size: letter;
+    margin: 0;
+}
+
+@media print {
+    body {
+        background: var(--card);
+    }
+    .page {
+        margin: 0;
+        max-width: none;
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-block">
+                <h2>Contact</h2>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.58-7-12a7 7 0 1 1 14 0c0 4.42-7 12-7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
+                    <span>Sonora, México</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+                    <a href="mailto:brenda.leyva89@gmail.com">brenda.leyva89@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l-5-6 5-6"/><path d="M15 6l5 6-5 6"/></svg></span>
+                    <a href="https://github.com/BrendaLPhys">github.com/BrendaLPhys</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6"/></svg></span>
+                    <a href="https://www.linkedin.com/in/brenda-leyva-a-861430309/">linkedin.com/in/brenda-leyva-a-861430309</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11a1.5 1.5 0 0 0 0-2.1l-1-1a1.5 1.5 0 0 0-2.1 0L5 15l-1 5z"/></svg></span>
+                    <a href="https://medium.com/@brenda-leyva89">medium.com/@brenda-leyva89</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.9 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.9-3.8-9s1.3-6.4 3.8-9z"/></svg></span>
+                    <a href="https://brendalphys.github.io/">brendalphys.github.io</a>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h2>Core Strengths</h2>
+                <ul class="qual-list">
+                    <li>5+ years building production AI/ML systems spanning Generative AI, computer vision, and NLP</li>
+                    <li>Lead AI consulting engagements end-to-end, from business case to solution design</li>
+                    <li>Collaborated with CERN and global brands on Machine Learning research</li>
+                    <li>Bridge data science, software engineering, and cross-functional leadership</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block">
+                <h2>Education</h2>
+                <div class="edu-entry">
+                    <span class="degree">M.Sc. in Data Science</span>
+                    <span class="school">Universidad de Sonora · 2020–2022</span>
+                </div>
+                <div class="edu-entry">
+                    <span class="degree">B.Sc. in Physics</span>
+                    <span class="school">Universidad de Sonora · 2016–2020</span>
+                </div>
+                <div class="edu-entry">
+                    <span class="degree">M.B.A.</span>
+                    <span class="school">Instituto Tecnológico de Hermosillo · 2012–2013</span>
+                </div>
+                <div class="edu-entry">
+                    <span class="degree">B.A. in Tourism &amp; Business Administration</span>
+                    <span class="school">Universidad Estatal de Sonora · 2008–2011</span>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h2>Languages</h2>
+                <div class="lang-entry">
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">Proficient — C1</span>
+                </div>
+                <div class="lang-entry">
+                    <span class="lang-name">Spanish</span>
+                    <span class="lang-level">Native</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+
+            <div class="header-band">
+                <h1>Brenda Leyva Amaya</h1>
+                <div class="title">Data Scientist · AI Engineer &amp; Strategist</div>
+            </div>
+
+            <div class="main-body">
+
+                <div class="section">
+                    <h2>Professional Summary</h2>
+                    <div class="summary">
+                        AI Engineer and Data Scientist specializing in Generative AI, agentic systems, and Machine Learning. I take AI projects
+                        from research and proof of concept to production, combining technical expertise with business strategy. My background in
+                        physics, data science, and business enables me to design solutions, lead AI consulting projects, and develop data-driven
+                        business cases, delivering scalable, practical AI solutions that create real business value.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Professional Skills</h2>
+
+                    <div class="skills-block">
+                        <span class="label">Generative AI &amp; Agents</span>
+                        <div class="items">Generative AI, Agentic AI, LangChain, LangGraph, LlamaIndex, RAG Systems, Prompt Engineering, Claude Code, OpenAI APIs</div>
+                    </div>
+
+                    <div class="skills-block">
+                        <span class="label">ML &amp; Computer Vision</span>
+                        <div class="items">TensorFlow, PyTorch, Keras, Scikit-learn, Deep Learning, Computer Vision, NLP, OpenCV, AWS Rekognition, NeRFs, Gaussian Splatting</div>
+                    </div>
+
+                    <div class="skills-block">
+                        <span class="label">Data, MLOps &amp; Cloud</span>
+                        <div class="items">Python, SQL, R, Pandas, NumPy, Power BI, Tableau, GCP (BigQuery, Cloud Run, Artifact Registry), AWS (SageMaker, Lambda), Docker, Terraform, Git, GitHub Actions</div>
+                    </div>
+
+                    <div class="skills-block">
+                        <span class="label">AI Strategy &amp; Consulting</span>
+                        <div class="items">AI Architecture, AI Consulting, Business Case Analysis, Information Architecture, Technical Writing, Leadership &amp; Collaboration</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Work History</h2>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="role">AI Engineer <span class="org">— Wizeline</span></span>
+                            <span class="job-date">OCT 2024 – PRESENT</span>
+                        </div>
+                        <ul>
+                            <li>Led R&amp;D and delivery of an AI-powered content creation platform for highly-regulated industries, coordinating the MVP and architecting its product roadmap.</li>
+                            <li>Architected a LangChain SQL Agent and a Retrieval-Augmented Generation (RAG) system with intelligent query routing; led AI consulting engagements from business case analysis to solution design.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="role">Data Scientist <span class="org">— Wizeline</span></span>
+                            <span class="job-date">APR 2023 – SEPT 2024</span>
+                        </div>
+                        <ul>
+                            <li>Built an AI-based video-to-text pipeline for automated transcription and highlight generation, and a neural-network algorithm to estimate body measurements from 2D images.</li>
+                            <li>Benchmarked people-tracking techniques for sports video and designed a CNN-based autoencoder for anomaly detection on CERN's CMS systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="role">Technical Writer <span class="org">— Wizeline</span></span>
+                            <span class="job-date">APR 2021 – APR 2023</span>
+                        </div>
+                        <ul>
+                            <li>Established documentation strategies and Docs-as-Code workflows (Git, Markdown, MKDocs) to improve engineering team efficiency.</li>
+                            <li>Collaborated with cross-functional teams to produce technical reference materials and stakeholder presentations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="role">Accounting Analyst <span class="org">— Evolve Media</span></span>
+                            <span class="job-date">FEB 2012 – JUL 2016</span>
+                        </div>
+                        <ul>
+                            <li>Managed accounts receivable and financial data reporting.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Other Activities</h2>
+                    <div class="compact-list">
+                        <div class="compact-row">
+                            <span><span class="role">Instructor, MLOps Bootcamp</span> <span class="org">— Wizeline Academy</span></span>
+                            <span class="job-date">2024</span>
+                        </div>
+                        <div class="compact-row">
+                            <span><span class="role">Instructor, Technical Writing Academy</span> <span class="org">— Wizeline Academy</span></span>
+                            <span class="job-date">2022</span>
+                        </div>
+                        <div class="compact-row">
+                            <span><span class="role">Research Assistant</span> <span class="org">— Biophysics &amp; Semiconductors Laboratories</span></span>
+                            <span class="job-date">2018 – 2020</span>
+                        </div>
+                        <div class="compact-row">
+                            <span><span class="role">Summer Research</span> <span class="org">— CubeSat Orientation Project, UABC</span></span>
+                            <span class="job-date">2019</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+</div>
+</body>
+</html>
