@@ -13,22 +13,18 @@
 			<!-- Header -->
 			<header id="header">
 				<h1 id="logo"><a href="index.html">Brenda Leyva's Portfolio</a></h1>
-				<nav id="nav">
+				<nav id="nav" aria-label="Main">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li>
-							<a href="my-projects.html">Projects</a>
-							<ul>
-								<li>
-									<a href="#">Data Science and AI</a>
-									<ul>
-										<li><a href="rag.html">RAG System and NL2SQL Agent</a></li>
-										<li><a href="tracking.html">Player Tracking Solution</a></li>
-										<li><a href="highlights.html">Video Highlights Generator</a></li>
-										<li><a href="measurements.html">Automatic Body Measurements</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Technical Writing</a></li>
+						<li class="has-dropdown current">
+							<a href="my-projects.html" aria-haspopup="true" aria-expanded="false">Projects</a>
+							<ul class="dropdown">
+								<li class="group"><a href="my-projects.html#data-science">Data Science and AI</a></li>
+								<li><a href="rag.html">RAG System and NL2SQL Agent</a></li>
+								<li><a href="tracking.html">Player Tracking Solution</a></li>
+								<li><a href="highlights.html">Video Highlights Generator</a></li>
+								<li class="current"><a href="measurements.html">Automatic Body Measurements</a></li>
+								<li class="group"><a href="my-projects.html#technical-writing">Technical Writing</a></li>
 							</ul>
 						</li>
 						<li><a href="resume.html">Resume</a></li>
@@ -109,7 +105,6 @@
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>

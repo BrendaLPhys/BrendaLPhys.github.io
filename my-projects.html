@@ -18,22 +18,20 @@
 			<!-- Header -->
 				<header id="header">
 					<h1 id="logo"><a href="index.html">Brenda Leyva's Portfolio</a></h1>
-					<nav id="nav">
+					<nav id="nav" aria-label="Main">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li class="current"><a href="my-projects.html">Projects</a></li>
-							<ul>
-								<li>
-									<a href="#">Data Science and AI</a>
-									<ul>
-										<li><a href="rag.html">RAG System and NL2SQL Agent</a></li>
-										<li><a href="tracking.html">Player Tracking Solution</a></li>
-										<li><a href="highlights.html">Video Highlights Generator</a></li>
-										<li><a href="measurements.html">Automatic Body Measurements</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Technical Writing</a></li>
-							</ul>
+							<li class="has-dropdown current">
+								<a href="my-projects.html" aria-haspopup="true" aria-expanded="false">Projects</a>
+								<ul class="dropdown">
+									<li class="group"><a href="my-projects.html#data-science">Data Science and AI</a></li>
+									<li><a href="rag.html">RAG System and NL2SQL Agent</a></li>
+									<li><a href="tracking.html">Player Tracking Solution</a></li>
+									<li><a href="highlights.html">Video Highlights Generator</a></li>
+									<li><a href="measurements.html">Automatic Body Measurements</a></li>
+									<li class="group"><a href="my-projects.html#technical-writing">Technical Writing</a></li>
+								</ul>
+							</li>
 							<li><a href="resume.html">Resume</a></li>
 							<li><a href="contact.html" class="button primary">Contact</a></li>
 						</ul>
@@ -52,7 +50,7 @@
 					<section id="my-projects" class="wrapper style3 container special">
 						<div class="row">
 							<!-- Data Science and AI Column -->
-							<div class="col-6 col-12-narrower" style="border-right: 1px solid #ccc; padding-right: 20px;">
+							<div id="data-science" class="col-6 col-12-narrower" style="border-right: 1px solid #ccc; padding-right: 20px;">
 								<header class="major">
 									<h2>Data Science and AI</h2>
 								</header>
@@ -95,7 +93,7 @@
 							</div>
 					
 							<!-- Technical Writing Column -->
-							<div class="col-6 col-12-narrower" style="padding-left: 20px;">
+							<div id="technical-writing" class="col-6 col-12-narrower" style="padding-left: 20px;">
 								<header class="major">
 									<h2>Technical Writing</h2>
 								</header>
@@ -154,7 +152,6 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollgress.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

@@ -33,12 +33,51 @@
 			offset: function() { return $header.height() + 10; }
 		});
 
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			mode: 'fade',
-			noOpenerFade: true,
-			expandMode: (browser.mobile ? 'click' : 'hover')
-		});
+	// Dropdowns (hover/focus handled in CSS; click toggles for touch).
+		(function() {
+
+			var $items = $('#nav li.has-dropdown');
+
+			function close($li) {
+				$li.removeClass('open').children('a').attr('aria-expanded', 'false');
+			}
+
+			$items.children('a').on('click', function(event) {
+
+				var $li = $(this).parent();
+
+				// On touch devices, first tap opens the menu; second tap follows the link.
+					if (browser.mobile && !$li.hasClass('open')) {
+						event.preventDefault();
+						close($items);
+						$li.addClass('open');
+						$(this).attr('aria-expanded', 'true');
+					}
+
+			});
+
+			// Close on outside click or Escape.
+				$(document)
+					.on('click touchstart', function(event) {
+						if (!$(event.target).closest('#nav li.has-dropdown').length)
+							close($items);
+					})
+					.on('keydown', function(event) {
+						if (event.key == 'Escape') {
+							close($items);
+							document.activeElement.blur();
+						}
+					});
+
+			// Keep aria-expanded in sync for keyboard/hover users.
+				$items.on('mouseenter focusin', function() {
+					$(this).children('a').attr('aria-expanded', 'true');
+				}).on('mouseleave focusout', function() {
+					if (!$(this).hasClass('open'))
+						$(this).children('a').attr('aria-expanded', 'false');
+				});
+
+		})();
 
 	// Nav Panel.
 
