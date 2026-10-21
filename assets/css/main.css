@@ -3394,3 +3394,43 @@ input, select, textarea {
 			}
 
 	}
+
+/* Project grid (Projects page) */
+
+	.project-grid .row {
+		justify-content: center;
+	}
+
+	.project-grid .image.featured {
+		margin-bottom: 1em;
+	}
+
+		.project-grid .image.featured img {
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+			width: 100%;
+		}
+
+	.project-grid h3 {
+		font-size: 1.1em;
+		line-height: 1.4em;
+		margin-bottom: 0;
+	}
+
+		.project-grid h3 a {
+			border-bottom: 0;
+			color: inherit;
+			text-decoration: none;
+		}
+
+			.project-grid h3 a:hover {
+				color: #83d3c9;
+			}
+
+	@media screen and (max-width: 736px) {
+
+		.project-grid .col-12-mobile {
+			margin-bottom: 1.5em;
+		}
+
+	}
